@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Gale Reef",
+    "image": "images/reef1.jpg",
+    "description": "Gale Reef offers clear water, colorful coral, and an unforgettable diving experience."
+  },
+  {
+    "name": "Dawson's Reef",
+    "image": "images/reef2.jpg",
+    "description": "Dawson's Reef features lively fish, bright coral, and a memorable underwater adventure."
+  },
+  {
+    "name": "Claire's Reef",
+    "image": "images/reef3.jpg",
+    "description": "Claire's Reef combines vibrant marine life and beautiful coral for a relaxing getaway."
+  }
+]
