@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1 class="mb-0">Add trip</h1>
+  <a class="btn btn-outline-secondary" routerLink="/">Back to trips</a>
+</div>
+
+<div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="row g-3" novalidate>
+  <div class="col-md-6">
+    <label class="form-label" for="code">Trip code</label>
+    <input id="code" class="form-control" formControlName="code" required>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label" for="name">Name</label>
+    <input id="name" class="form-control" formControlName="name" required>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label" for="length">Length</label>
+    <input id="length" class="form-control" formControlName="length" placeholder="4 nights / 5 days" required>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label" for="start">Start date</label>
+    <input id="start" type="date" class="form-control" formControlName="start" required>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label" for="resort">Resort</label>
+    <input id="resort" class="form-control" formControlName="resort" required>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label" for="perPerson">Price per person</label>
+    <input id="perPerson" class="form-control" formControlName="perPerson" placeholder="799.00" required>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label" for="image">Image filename</label>
+    <input id="image" class="form-control" formControlName="image" placeholder="reef1.jpg" required>
+  </div>
+  <div class="col-12">
+    <label class="form-label" for="description">Description</label>
+    <textarea id="description" class="form-control" rows="3" formControlName="description" required></textarea>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-success" type="submit" [disabled]="saving">
+      {{ saving ? 'Saving...' : 'Save trip' }}
+    </button>
+  </div>
+</form>

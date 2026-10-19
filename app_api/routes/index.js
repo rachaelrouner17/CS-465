@@ -13,5 +13,14 @@ router.get(
   tripsController.tripsFindByCode
 );
 
+// POST /api/trips creates a trip.
+router.post("/trips", tripsController.tripsAddTrip);
+
+// PUT /api/trips/:tripCode updates a trip.
+router.put("/trips/:tripCode", tripsController.tripsUpdateTrip);
+
+// DELETE /api/trips/:tripCode removes a trip.
+router.delete("/trips/:tripCode", tripsController.tripsDeleteTrip);
+
 // Make this router available to app.js
 module.exports = router;

@@ -1,0 +1,13 @@
+<article class="card h-100 shadow-sm">
+  <img class="card-img-top" [src]="'/assets/images/' + trip.image" [alt]="trip.name">
+  <div class="card-body d-flex flex-column">
+    <h2 class="h5 card-title">{{ trip.name }}</h2>
+    <p class="card-text flex-grow-1">{{ trip.description }}</p>
+    <dl class="small mb-3">
+      <dt>Length</dt><dd>{{ trip.length }}</dd>
+      <dt>Resort</dt><dd>{{ trip.resort }}</dd>
+      <dt>Per person</dt><dd>${{ trip.perPerson }}</dd>
+    </dl>
+    <a class="btn btn-primary mt-auto" [routerLink]="['/edit', trip.code]">Edit trip</a>
+  </div>
+</article>

@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1 class="mb-0">Edit trip</h1>
+  <a class="btn btn-outline-secondary" routerLink="/">Back to trips</a>
+</div>
+
+<div *ngIf="loading" class="alert alert-info">Loading trip...</div>
+<div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+<form *ngIf="!loading" [formGroup]="form" (ngSubmit)="onSubmit()" class="row g-3" novalidate>
+  <div class="col-md-6">
+    <label class="form-label" for="edit-code">Trip code</label>
+    <input id="edit-code" class="form-control" formControlName="code" required>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label" for="edit-name">Name</label>
+    <input id="edit-name" class="form-control" formControlName="name" required>
+  </div>
+  <div class="col-md-6"><label class="form-label" for="edit-length">Length</label><input id="edit-length" class="form-control" formControlName="length" required></div>
+  <div class="col-md-6"><label class="form-label" for="edit-start">Start date</label><input id="edit-start" type="date" class="form-control" formControlName="start" required></div>
+  <div class="col-md-6"><label class="form-label" for="edit-resort">Resort</label><input id="edit-resort" class="form-control" formControlName="resort" required></div>
+  <div class="col-md-6"><label class="form-label" for="edit-price">Price per person</label><input id="edit-price" class="form-control" formControlName="perPerson" required></div>
+  <div class="col-md-6"><label class="form-label" for="edit-image">Image filename</label><input id="edit-image" class="form-control" formControlName="image" required></div>
+  <div class="col-12"><label class="form-label" for="edit-description">Description</label><textarea id="edit-description" class="form-control" rows="3" formControlName="description" required></textarea></div>
+  <div class="col-12 d-flex gap-2">
+    <button class="btn btn-primary" type="submit" [disabled]="saving">{{ saving ? 'Saving...' : 'Save changes' }}</button>
+    <button class="btn btn-danger" type="button" (click)="deleteTrip()">Delete trip</button>
+  </div>
+</form>
