@@ -1,7 +1,13 @@
 <nav class="navbar navbar-dark bg-dark shadow-sm">
   <div class="container">
     <a class="navbar-brand" routerLink="/">Travlr Getaways Admin</a>
-    <a class="btn btn-outline-light" routerLink="/add">Add Trip</a>
+    <div class="d-flex gap-2">
+      <a *ngIf="authentication.isLoggedIn(); else loginLink" class="btn btn-outline-light" routerLink="/add">Add Trip</a>
+      <ng-template #loginLink>
+        <a class="btn btn-outline-light" routerLink="/login">Admin login</a>
+      </ng-template>
+      <button *ngIf="authentication.isLoggedIn()" class="btn btn-outline-light" type="button" (click)="logout()">Log out</button>
+    </div>
   </div>
 </nav>
 

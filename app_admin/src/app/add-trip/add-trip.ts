@@ -37,6 +37,7 @@ export class AddTrip {
     this.error = '';
     if (this.form.invalid) {
       this.form.markAllAsTouched();
+      this.error = 'Please complete all required fields. Use a numeric price such as 899.00.';
       return;
     }
 

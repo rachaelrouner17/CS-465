@@ -8,6 +8,6 @@
       <dt>Resort</dt><dd>{{ trip.resort }}</dd>
       <dt>Per person</dt><dd>${{ trip.perPerson }}</dd>
     </dl>
-    <a class="btn btn-primary mt-auto" [routerLink]="['/edit', trip.code]">Edit trip</a>
+    <a *ngIf="authentication.isLoggedIn()" class="btn btn-primary mt-auto" [routerLink]="['/edit', trip.code]">Edit trip</a>
   </div>
 </article>
